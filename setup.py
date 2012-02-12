@@ -9,7 +9,7 @@ if 'test' in sys.argv:
 
 setup(
     name = "djkeeper",
-    version = "0.2.1",
+    version = "0.2.2-dev",
 
     author = 'Njal Karevoll',
     author_email = 'njal@karevoll.no',
