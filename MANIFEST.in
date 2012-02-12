@@ -1,0 +1,2 @@
+include Readme.md
+include djkeeper/templates/djkeeper/index.html

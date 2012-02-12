@@ -1,0 +1,66 @@
+{% extends 'admin/base_site.html' %}
+
+{% block breadcrumbs %}
+   <div class="breadcrumbs">
+     <a href="{% url admin:index %}">Home</a> &rsaquo; {{ title }}
+   </div>
+{% endblock %}
+
+{% block extrahead %}
+    <style type="text/css">
+        .clients-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="module">
+    {% if not clients.all %}
+        <div>No clients defined.</div>
+    {% else %}
+        <table class="clients-table">
+            <caption>Active clients</caption>
+
+            {% if clients.active %}
+                <thead>
+                    <tr><th>Name</th><th>Servers</th><th>Reconnect</th><th>State</th></tr>
+                </thead>
+                <tbody>
+                {% for client in clients.active %}
+                <tr class="{% cycle 'row1' 'row2' %}">
+                    <td><strong>{{ client.name }}</strong></td>
+                    <td>{{ client.settings.servers }}</td>
+                    <td>{{client.settings.reconnect}}</td>
+                    <td><span style="color: {{ client.state_color }}">{{client.instance.state_name}}</span></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            {% else %}
+                <tr><td>No active clients.</td></tr>
+            {% endif %}
+        </table>
+
+        <table class="clients-table">
+            <caption>Inactive clients</caption>
+            {% if clients.inactive %}
+                <thead>
+                    <tr><th>Name</th><th>Servers</th><th>Reconnect</th></tr>
+                </thead>
+                <tbody>
+                {% for client in clients.inactive %}
+                    <tr class="{% cycle 'row1' 'row2' %}">
+                        <td><strong>{{ client.name }}</strong></td><td>{{ client.settings.servers }}</td><td>{{client.settings.reconnect}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            {% else %}
+                <tr><td>No inactive clients.</td></tr>
+            {% endif %}
+        </table>
+    {% endif %}
+    </div>
+
+{% endblock %}
