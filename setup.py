@@ -25,8 +25,8 @@ setup(
 
     # enable python setup.py nosetests
     setup_requires = ['nose'],
-    test_suite = 'nose.collector',
-    tests_require = ['mock'],
+    test_suite = 'setuptest.SetupTestSuite',
+    tests_require = ['django-setuptest'],
 
     requires = ['pykeeper'],
 

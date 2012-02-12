@@ -54,7 +54,7 @@ zkServer / zkServer.sh is found in the ZooKeeper installation directory.
 
 The tests can then be run via the setup.py script:
 
-    $ python setup.py nosetests -with-doctest --verbosity=2
+    $ python setup.py test
 
 
 ## Example usage with Django

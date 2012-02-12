@@ -10,6 +10,7 @@ STATE_TO_COLOR = dict(
     connecting = 'darkorange'
 )
 
+
 def _create_client_context(client_name, has_instance):
     client = dict(name=client_name)
 
@@ -20,6 +21,7 @@ def _create_client_context(client_name, has_instance):
         client['instance'] = instance
         client['state_color'] = STATE_TO_COLOR[instance.state_name]
     return client
+
 
 def unprotected_index(request):
     context = dict(title='djkeeper')

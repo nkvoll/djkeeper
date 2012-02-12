@@ -8,6 +8,7 @@ import pykeeper
 class NoSuchClientException(Exception):
     pass
 
+
 class ZooKeeperManager(object):
     _clients = dict()
     _client_create_lock = threading.Lock()
@@ -67,7 +68,6 @@ class ZooKeeperManager(object):
         client_settings.setdefault('reconnect', True)
 
         return client_settings
-
 
     @classmethod
     def _get_client_configurations(cls):
