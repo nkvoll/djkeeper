@@ -1,15 +1,20 @@
+import os
+import sys
 from setuptools import setup, find_packages
 
 
 # make python setup.py test not spew errors (see http://www.eby-sarna.com/pipermail/peak/2010-May/003357.html)
-import sys
 if 'test' in sys.argv:
     import multiprocessing
 
+# add djkeeper to the package path so we can get the version from the source tree
+here = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, here)
+import djkeeper
 
 setup(
-    name = "djkeeper",
-    version = "0.2.2-dev",
+    name = 'djkeeper',
+    version = str(djkeeper.version),
 
     author = 'Njal Karevoll',
     author_email = 'njal@karevoll.no',
