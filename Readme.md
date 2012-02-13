@@ -9,7 +9,7 @@ Either install the latest relase from PYPI:
 
 ... or get the latest development version from GitHub:
 
-    $ pip install https://github.com/nkvoll/djkeeper/zipball/develop#egg=djkeeper
+    $ pip install https://github.com/nkvoll/djkeeper/zipball/master#egg=djkeeper
 
 Additionally, djkeeper requires a working installation of the official low level Python ZooKeeper bindings. These can either be built from source (recommended, explanation below), or
 you could install the statically compiled version [zc-zookeeper-static](http://pypi.python.org/pypi/zc-zookeeper-static)) from PYPI, which may or may not work on your architecture/OS, and may
