@@ -33,7 +33,7 @@ setup(
     test_suite = 'setuptest.SetupTestSuite',
     tests_require = ['django-setuptest'],
 
-    requires = ['pykeeper'],
+    install_requires = ['pykeeper'],
 
     packages = find_packages(),
 
