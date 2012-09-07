@@ -1,5 +1,6 @@
 # djkeeper: Utilities for using ZooKeeper in a Django project
 
+# No longer maintained, supersceded by Kazoo: https://github.com/python-zk/kazoo
 
 ## Installing
 
